@@ -16,3 +16,37 @@ img {
   display: block;
   max-width: 100%;
 }
+.timer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  width: 40px;
+}
+
+.value {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  font-weight: 500;
+  color: lightcoral;
+  background-color: black;
+  text-align: center;
+  border-right-style: dotted;
+  border-left-style: dotted;
+
+  justify-content: center;
+}
+
+.label {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+  font-weight: 500;
+
+  justify-content: center;
+
+}
