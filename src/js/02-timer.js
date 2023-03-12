@@ -46,10 +46,10 @@ const options = {
                    
                     const { days, hours, minutes, seconds } = convertMs(timeLeft);
                     
-                    refs.days.innerHTML = days/* < 10 ? pad(days) : days */;
-                    refs.hours.innerHTML = hours/*  < 10 ? pad(hours) : hours */;
-                    refs.minutes.innerHTML = minutes/*  < 10 ? pad(minutes) : minutes */;
-                    refs.seconds.innerHTML = seconds/*  < 10 ? pad(seconds) : seconds */;
+                    refs.days.innerHTML = days;
+                    refs.hours.innerHTML = hours;
+                    refs.minutes.innerHTML = minutes;
+                    refs.seconds.innerHTML = seconds;
 
                     if (timeLeft < 1000) {
                         clearInterval(timer);
@@ -58,7 +58,8 @@ const options = {
                 }, 1000);
             }
 
-            function pad(value) {
+            function addLeadingZero(value) {
+                const stringValue = String(value);
                 return String(value).padStart(2, '0');
             }
 
@@ -71,13 +72,13 @@ const options = {
                         const day = hour * 24;
 
                         // Remaining days
-                        const days = pad(Math.floor(ms / day));
+                        const days = addLeadingZero(Math.floor(ms / day));
                         // Remaining hours
-                        const hours = pad(Math.floor((ms % day) / hour));
+                        const hours = addLeadingZero(Math.floor((ms % day) / hour));
                         // Remaining minutes
-                        const minutes = pad(Math.floor(((ms % day) % hour) / minute));
+                        const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
                         // Remaining seconds
-                        const seconds = pad(Math.floor((((ms % day) % hour) % minute) / second));
+                        const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
 
                         return { days, hours, minutes, seconds };
             }
