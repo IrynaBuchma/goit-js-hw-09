@@ -30,6 +30,7 @@ function submitCreatePromises(e) {
 
     delay += delayStepValue;
   }
+  e.currentTarget.reset();
 }
 
 function createPromise(position, delay) {
